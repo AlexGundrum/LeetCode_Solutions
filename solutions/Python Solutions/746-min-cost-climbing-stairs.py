@@ -1,0 +1,25 @@
+'''
+https://leetcode.com/problems/min-cost-climbing-stairs/description/
+
+You are given an integer array cost where cost[i] is the cost of ith step on a staircase. Once you pay the cost, you can either climb one or two steps.
+
+You can either start from the step with index 0, or the step with index 1.
+
+Return the minimum cost to reach the top of the floor.
+
+ 
+'''
+
+from functools import cache
+class Solution:
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        length = len(cost)
+        @cache        
+        def minCost(currentStepIndex):
+            if currentStepIndex >= length:
+                return 0
+                
+            return min(minCost(currentStepIndex + 1), minCost(currentStepIndex + 2)) + cost[currentStepIndex]
+        return min(minCost(0), minCost(1))
+
+  
