@@ -11,7 +11,7 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         LEN = len(prices)
 
-        @lru_cache(maxsize=512)
+        @lru_cache(maxsize=None)
         def dp(day, holding_stock, sales_left):
             if day >= LEN:
                 return 0
