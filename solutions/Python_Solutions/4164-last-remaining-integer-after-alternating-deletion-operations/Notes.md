@@ -1,0 +1,1 @@
+<h2>last-remaining-integer-after-alternating-deletion-operations Notes</h2><hr>[ Time taken: 40 m 12 s ]
