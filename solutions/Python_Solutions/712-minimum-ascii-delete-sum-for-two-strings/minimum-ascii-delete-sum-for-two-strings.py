@@ -28,11 +28,11 @@ class Solution:
             
             if (i >= len(s1)):
                 #i is oob
-                return ord(s2[j]) + dp(i, j + 1)
+                return sum(ord(c) for c in s2[j:])
 
             if (j >= len(s2)):
                 #j is oob
-                return ord(s1[i]) + dp(i + 1, j)
+                return sum(ord(c) for c in s1[i:])
             
             #both are in bounds. 
             if s1[i] == s2[j]:
