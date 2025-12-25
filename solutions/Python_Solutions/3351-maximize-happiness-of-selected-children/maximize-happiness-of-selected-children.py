@@ -18,6 +18,8 @@ then we will sort that, go from smallest to biggest so that we minimize losing o
 
 1 + 11 + 40
 
+WAIT LMAO WE COULD JUST SORT IT
+
 '''
 
 
@@ -25,17 +27,11 @@ import heapq
 
 class Solution:
     def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
-        kids = [-1 * kid for kid in happiness]
-        heapq.heapify(kids) 
-        chosen = []
-        for i in range(k):
-            kid = -1 * heapq.heappop(kids)
-            chosen.append(kid)
 
-        #chosen = chosen[::-1] #reverse it so that the smallest is first. 
+        happiness.sort(reverse=True)
 
         score = 0
-        for i in range(len(chosen)):
-            score += max(0, chosen[i] - i)
-            print('score: ' + str(score))        
+        for i in range(k):
+            score += max(0, happiness[i] - i)
+            #print('score: ' + str(score))        
         return score
