@@ -1,9 +1,9 @@
 class Solution:
     def removeVowels(self, s: str) -> str:
-        new = ""
+        new = []
         vowels = 'aeiou'
         for char in s:
             if char not in vowels:
-                new += char
+                new.append(char)
 
-        return new
+        return ''.join(new)
